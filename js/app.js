@@ -1,27 +1,34 @@
 $(function(){
 	$('#rollno').on('blur',function(){
-		if(!/(\d\d((CO)|(DCO)|(EE)|(ME)|(DME)|(CE)|(DCE)|(DEE)|(CES)|(DCES)|(EX)|(DEX))\d{2,3})/i.test(this.value)){
-			alert("Invalid rollno.");
+		if(!/(\d{2}((CO)|(DCO)|(EE)|(DEE)|(EX)|(DEX)|(ME)|(DME)|(CE)|(DCE)|(CES)|(DCES))\d{2,3})/i.test(this.value)){
+			alert("Invalid Roll No");
 			this.value="";
 			$(this).focus();
 		}
 	});
 
 	$('#sname').on('keypress',function(e){
-		//console.log();
-		if(/[^a-zA-Z ]/.test(e.key)){
-			alert("Invalid Name");
+			if(/[^a-zA-Z ]/.test(e.key)){
+				alert("Invalid Name. Only Alphabets and Spaces are allowed");
+				this.value="";
+				$(this).focus();
+				return false;
+			}
+	});
+
+	$('#address').on('blur',function(){
+		if(this.value.length<10 || this.value.length>150){
+			alert("Invalid Address. Length must be between 50 to 150 characters");
 			this.value="";
 			$(this).focus();
-			return false;
 		}
 	});
 
-	$('#add').on('blur',function(e){
-		if((this.value.length()<=10 && this.value.length()>=15).test(this.value)){
-			alert("Minimum size is 50");
+	$('#semail').on('blur',function(){
+		if(/ /.test(this.value)){
+			alert("Invalid Email");
 			this.value="";
 			$(this).focus();
-		
-
+		}
+	});
 });

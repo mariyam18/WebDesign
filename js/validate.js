@@ -25,7 +25,7 @@ function checkEmail(e){
 
 function checkSubject(e){
 	var element=e.target;
-	if(/[^a-zA-Z]/.test(element.value)){
+	if(!/[^a-zA-Z]/.test(element.value)){
 		alert("subject is invalid!Only characters a-z A-Z ");
 		element.value="";
 		return false;
