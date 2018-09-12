@@ -1,6 +1,6 @@
 <?php
 
-$liink=null;
+$link=null;
 
 function connectdB(){
     $db_host="localhost";
@@ -9,8 +9,7 @@ function connectdB(){
     $db_name="AIKTC";
 
     global $link;
-    $link=mysqli_connect($db_host,$db_user,$db_password,$db_user)
-                    or die(mysqli_error());
+    $link=mysqli_connect($db_host,$db_user,$db_password) or die(mysqli_error());
     mysqli_select_db($link,$db_name) or die(mysqli_error());
 
 }

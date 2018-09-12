@@ -5,7 +5,7 @@
 		<title>Login Page</title>
 		<style type="text/css">
 		#login-box{
-			width: 100px;
+			width: 250px;
 			margin: 7em auto;
 			border: 1px solid black;
 			border-radius: 5px;
@@ -32,7 +32,7 @@
 			if($_POST){
 				$username=$_POST['username'];
 				$pass=$_POST['pass'];
-				if($username=="salman"&&$pass=="1234")
+				if($username=="Mariyam"&&$pass=="mariyam")
 				{
 					echo '<span>Login Successful!
 							you will be resirected
@@ -49,13 +49,13 @@
 					}
 				}
 			?>
-			<form method="post" action="logon.php">
+			<form method="post" action="login.php">
 				<div id="login-box">
 					<span>Log in<span>
 					<input type="text" name="username" id="username"
-							placehorder="username" required="required"/>
+							placeholder="username" required="required"/>
 					<input type="password" name="pass" id="pass"
-							placehorder="password" required="required"/>
+							placeholder="password" required="required"/>
 					<input type="submit" value="Log In">
 				</div>
 			</form>

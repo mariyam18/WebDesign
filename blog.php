@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <?php
 session_start();
-?>
+/*
+* Author: Muhammed Salman Shamsi
+*/?>
 <html>
     <head>
         <title>My Blog Page</title>
@@ -16,21 +18,20 @@ session_start();
             }
             if(isset($_SESSION['user']))
             {
-            	echo "<h1>Welcome $_SESSION[user]!</h1>"
-            	."<b>College :</b> $_SESSION[college]<br>"
-            	."<b>Class :</b> $_SESSION[class]<br>"
-            	."<b>Batch :</b> $_SESSION[batch]<br>";
-
-            	echo "<br>"
-            	."<form method='post' action='blog.php'>"
-            	."<input type='hidden' name='logout'
-            	value='yes'/>"
-            	."<input type='submit' value='Logout'/>"
-            	."</form>"
+                echo "<h1>Welcome $_SESSION[user]!</h1>"
+                . "<b>College :</b> $_SESSION[college]<br>"
+                . "<b>Class : </b> $_SESSION[class]<br>"
+                . "<b>Batch : </b> $_SESSION[batch]<br>";
+    
+                echo "<br>"
+                . "<form method='post' action='blog.php'>"
+                    . "<input type='hidden' name='logout' value='yes'/>" 
+                    . "<input type='submit' value='Logout'/>"
+                . "</form>";
             }
             else{
-            	header("Refresh: 0,url=login.php");
-            	}
-            ?>
-      </body>
-   </html>
+                header("Refresh: 0, url=login.php");
+            }
+        ?>
+    </body>
+</html>
